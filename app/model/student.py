@@ -59,9 +59,9 @@ def get_all_students():
 
 def update_student(id: int,first_name: str = None,last_name: str = None,age: int = None,courses: list[str] = None):
     values = {}
-    if first_name:
+    if first_name is not None:
         values["first_name"] = first_name
-    if last_name:
+    if last_name is not None:
         values["last_name"] = last_name
     if age:
         values["age"] = age
