@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 
 class Student(BaseModel):
@@ -6,4 +6,4 @@ class Student(BaseModel):
     first_name: str
     last_name: str
     age: int
-    courses: list[str] = Field(default_factory=list)
+    courses: list[str] | None = None
