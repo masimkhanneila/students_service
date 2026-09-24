@@ -17,19 +17,16 @@ def find_student_contrl(student_id: int):
         raise HTTPException(status_code=404, detail="Student not found")
     return student
 
-@router.patch("/{id}", response_model=Student, response_model_exclude_unset=True)
+@router.patch("/{id}", response_model=Student)
 def update_student_contrl(id: int, body: Student_py):
-    student = find_student_contrl(id)
-    if body.first_name is not None:
-        student["first_name"] = body.first_name
-    if body.last_name is not None:
-        student["last_name"] = body.last_name
-    if body.age is not None:
-        student["age"] = body.age
-    if body.courses is not None:
-        student["courses"] = body.courses
-    return student
-
+    find_student_contrl(id)
+    return student_model.update_student(
+        id=id,
+        first_name=body.first_name,
+        last_name=body.last_name,
+        age=body.age,
+        courses=body.courses
+    )
 @router.post("", response_model=Student)
 def create_student_contrl(student: Student_py):
     return student_model.create_student(student)
