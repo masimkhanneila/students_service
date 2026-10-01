@@ -33,6 +33,7 @@
 ## 6) Databases
 table : Student
 |   id  |    name    |   level  |
+|:-----:|:----------:|:--------:|
 |   1   | Zhangir    |     9    |
 |   2   | Neila      |    10    |
 |   3   | Batyrzhan  |    11    |
@@ -40,12 +41,14 @@ table : Student
 
 table : Subject
 |   id  |    name    |   level  |
+|:-----:|:----------:|:--------:|
 |   1   |   Math     |     9    |
 |   2   |   Math     |    10    |
 |   3   |   Math     |    11    |
 
 Table : Grade
 |   id  | student_id | subject_id |     date    | value |
+|:-----:|:----------:|:----------:|:-----------:|:-----:|
 |   1   |      1     |     1      | 2026-09-29  |   5   |
 |   2   |      2     |     2      | 2026-09-29  |   5   |
 |   3   |      4     |     1      | 2026-09-29  |   5   |
